@@ -1,0 +1,5 @@
+rootProject.name = 'parking'
+
+include 'web'
+
+include 'core'
