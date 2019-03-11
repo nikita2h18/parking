@@ -16,7 +16,7 @@ public class Transaction {
     private String type;
 
     @Column(name = "price")
-    private BigInteger price;
+    private Long price;
 
     @ManyToOne
     @JoinColumn(name = "renter_id")
@@ -28,7 +28,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(String type, BigInteger price, Renter renter) {
+    public Transaction(String type, Long price, Renter renter) {
         this.type = type;
         this.price = price;
         this.renter = renter;
@@ -50,11 +50,11 @@ public class Transaction {
         this.type = type;
     }
 
-    public BigInteger getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 

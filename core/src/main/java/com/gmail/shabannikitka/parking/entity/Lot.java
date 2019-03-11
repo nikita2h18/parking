@@ -14,7 +14,7 @@ public class Lot {
     private Long id;
 
     @Column(name = "number")
-    private BigInteger number;
+    private Long number;
 
     @Column(name = "type")
     private String type;
@@ -22,7 +22,7 @@ public class Lot {
     public Lot() {
     }
 
-    public Lot(BigInteger number, String type) {
+    public Lot(Long number, String type) {
         this.number = number;
         this.type = type;
     }
@@ -35,11 +35,11 @@ public class Lot {
         this.id = id;
     }
 
-    public BigInteger getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(BigInteger number) {
+    public void setNumber(Long number) {
         this.number = number;
     }
 
