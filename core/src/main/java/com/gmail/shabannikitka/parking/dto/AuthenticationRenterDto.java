@@ -1,6 +1,7 @@
 package com.gmail.shabannikitka.parking.dto;
 
 public class AuthenticationRenterDto {
+
     public String login;
 
     public String password;
