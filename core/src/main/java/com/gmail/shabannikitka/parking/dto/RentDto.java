@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class RentDto {
 
-    public Long id;
     public RenterDto renter;
     public LotDto lot;
     public Date rentStart;
@@ -14,8 +13,7 @@ public class RentDto {
     public RentDto() {
     }
 
-    public RentDto(Long id, RenterDto renter, LotDto lot, Date rentStart, Date rentEnd, TransactionDto transaction) {
-        this.id = id;
+    public RentDto(RenterDto renter, LotDto lot, Date rentStart, Date rentEnd, TransactionDto transaction) {
         this.renter = renter;
         this.lot = lot;
         this.rentStart = rentStart;

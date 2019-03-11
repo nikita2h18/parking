@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class LotStatusDto {
 
-    public Long id;
     public LotDto lot;
     public String status;
     public Date timeStamp;
@@ -12,8 +11,7 @@ public class LotStatusDto {
     public LotStatusDto() {
     }
 
-    public LotStatusDto(Long id, LotDto lot, String status, Date timeStamp) {
-        this.id = id;
+    public LotStatusDto(LotDto lot, String status, Date timeStamp) {
         this.lot = lot;
         this.status = status;
         this.timeStamp = timeStamp;

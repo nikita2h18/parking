@@ -12,6 +12,12 @@ public class Renter {
     @Column(name = "id")
     private Long id;
 
+    @OneToOne(mappedBy = "renter")
+    private RenterInfo renterInfo;
+
+    @OneToOne(mappedBy = "renter")
+    private RenterCredentials renterCredentials;
+
     public Renter() {
     }
 
