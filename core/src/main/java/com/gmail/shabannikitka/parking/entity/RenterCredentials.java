@@ -25,7 +25,11 @@ public class RenterCredentials {
     public RenterCredentials() {
     }
 
-    public RenterCredentials(String login, String hash, Renter renter) {
+    public RenterCredentials(Renter renter) {
+        this.renter = renter;
+    }
+
+    public RenterCredentials(Renter renter, String login, String hash) {
         this.login = login;
         this.hash = hash;
         this.renter = renter;

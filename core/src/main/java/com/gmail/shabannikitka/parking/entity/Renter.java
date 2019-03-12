@@ -28,4 +28,20 @@ public class Renter {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public RenterInfo getRenterInfo() {
+        return renterInfo;
+    }
+
+    public void setRenterInfo(RenterInfo renterInfo) {
+        this.renterInfo = renterInfo;
+    }
+
+    public RenterCredentials getRenterCredentials() {
+        return renterCredentials;
+    }
+
+    public void setRenterCredentials(RenterCredentials renterCredentials) {
+        this.renterCredentials = renterCredentials;
+    }
 }

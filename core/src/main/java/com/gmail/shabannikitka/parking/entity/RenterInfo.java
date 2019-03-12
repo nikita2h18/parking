@@ -30,6 +30,10 @@ public class RenterInfo {
     public RenterInfo() {
     }
 
+    public RenterInfo(Renter renter) {
+        this.renter = renter;
+    }
+
     public RenterInfo(String firstName, String lastName, String patronymic, String passport_number, Renter renter) {
         this.firstName = firstName;
         this.lastName = lastName;
