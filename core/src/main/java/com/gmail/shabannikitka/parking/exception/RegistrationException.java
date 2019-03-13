@@ -1,4 +1,4 @@
-package com.gmail.shabannikitka.parking.exeption;
+package com.gmail.shabannikitka.parking.exception;
 
 public class RegistrationException extends Exception {
 

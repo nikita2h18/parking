@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RenterRepository extends CrudRepository<Renter, Long> {
-
+    public void findByLogin(String login);
 }

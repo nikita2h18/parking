@@ -5,18 +5,22 @@ import com.gmail.shabannikitka.parking.dto.RegisterRenterDto;
 import com.gmail.shabannikitka.parking.entity.Renter;
 import com.gmail.shabannikitka.parking.entity.RenterCredentials;
 import com.gmail.shabannikitka.parking.entity.RenterInfo;
-import com.gmail.shabannikitka.parking.exeption.RegistrationException;
+import com.gmail.shabannikitka.parking.exception.RegistrationException;
 import com.gmail.shabannikitka.parking.repositories.RenterCredentialsRepository;
 import com.gmail.shabannikitka.parking.repositories.RenterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import javax.transaction.Transactional;
 
 @Service
+@Transactional
 public class RegisterService {
 
+    @Autowired
     private final RenterCredentialsRepository renterCredentialsRepository;
+
+    @Autowired
     private final RenterRepository renterRepository;
 
     public RegisterService(RenterCredentialsRepository renterCredentialsRepository, RenterRepository renterRepository) {

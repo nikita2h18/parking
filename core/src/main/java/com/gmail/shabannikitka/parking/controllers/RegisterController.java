@@ -1,7 +1,7 @@
 package com.gmail.shabannikitka.parking.controllers;
 
 import com.gmail.shabannikitka.parking.dto.RegisterRenterDto;
-import com.gmail.shabannikitka.parking.exeption.RegistrationException;
+import com.gmail.shabannikitka.parking.exception.RegistrationException;
 import com.gmail.shabannikitka.parking.services.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
