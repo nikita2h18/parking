@@ -36,6 +36,7 @@ public class RegisterService {
         //TODO: save renter info
 
         renter.setRenterCredentials(new RenterCredentials(renter, registerRenterDto.login, registerRenterDto.hash));
+        renter.setRenterInfo(new RenterInfo(renter, registerRenterDto.firstName, registerRenterDto.secondName, registerRenterDto.patronymic, registerRenterDto.passportNumber));
         renterRepository.save(renter);
 
     }
