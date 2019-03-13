@@ -12,10 +12,10 @@ public class Renter {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(mappedBy = "renter")
+    @OneToOne(mappedBy = "renter", cascade = CascadeType.ALL)
     private RenterInfo renterInfo;
 
-    @OneToOne(mappedBy = "renter")
+    @OneToOne(mappedBy = "renter", cascade = CascadeType.ALL)
     private RenterCredentials renterCredentials;
 
     public Renter() {

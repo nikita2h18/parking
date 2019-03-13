@@ -34,7 +34,7 @@ public class RenterInfo {
         this.renter = renter;
     }
 
-    public RenterInfo(String firstName, String lastName, String patronymic, String passport_number, Renter renter) {
+    public RenterInfo(Renter renter, String firstName, String lastName, String patronymic, String passport_number) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymic = patronymic;

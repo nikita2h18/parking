@@ -17,10 +17,7 @@ import javax.transaction.Transactional;
 @Transactional
 public class RegisterService {
 
-    @Autowired
     private final RenterCredentialsRepository renterCredentialsRepository;
-
-    @Autowired
     private final RenterRepository renterRepository;
 
     public RegisterService(RenterCredentialsRepository renterCredentialsRepository, RenterRepository renterRepository) {
@@ -36,9 +33,9 @@ public class RegisterService {
         Renter renter = new Renter();
 
         renterRepository.save(renter);
+        //TODO: save renter info
 
-        renter.setRenterCredentials(new RenterCredentials(renter, registerRenterDto.login, registerRenterDto.password));
-        renter.setRenterInfo(new RenterInfo(renter));
+        renter.setRenterCredentials(new RenterCredentials(renter, registerRenterDto.login, registerRenterDto.hash));
         renterRepository.save(renter);
 
     }
