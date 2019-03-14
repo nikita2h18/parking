@@ -17,6 +17,9 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    public AuthController() {
+    }
+
     @PostMapping
     public String authenticate(@RequestBody AuthenticationRenterDto authenticationRenterDto) throws AuthenticationException, NoSuchEntityException{
         return authService.authenticate(authenticationRenterDto);

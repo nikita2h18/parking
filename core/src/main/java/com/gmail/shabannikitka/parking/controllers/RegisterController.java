@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("register")
 public class RegisterController {
 
+    @Autowired
     private final RegisterService registerService;
 
     public RegisterController(RegisterService registerService) {

@@ -8,6 +8,7 @@ import com.gmail.shabannikitka.parking.entity.RenterInfo;
 import com.gmail.shabannikitka.parking.exception.RegistrationException;
 import com.gmail.shabannikitka.parking.repositories.RenterCredentialsRepository;
 import com.gmail.shabannikitka.parking.repositories.RenterRepository;
+import com.gmail.shabannikitka.parking.sequrity.Hasher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,9 @@ import javax.transaction.Transactional;
 @Transactional
 public class RegisterService {
 
+    @Autowired
     private final RenterCredentialsRepository renterCredentialsRepository;
+    @Autowired
     private final RenterRepository renterRepository;
 
     public RegisterService(RenterCredentialsRepository renterCredentialsRepository, RenterRepository renterRepository) {
@@ -35,7 +38,7 @@ public class RegisterService {
         renterRepository.save(renter);
         //TODO: save renter info
 
-        renter.setRenterCredentials(new RenterCredentials(renter, registerRenterDto.login, registerRenterDto.password));
+        renter.setRenterCredentials(new RenterCredentials(renter, registerRenterDto.login, Hasher.getHash(registerRenterDto.password)));
         renter.setRenterInfo(new RenterInfo(renter, registerRenterDto.firstName, registerRenterDto.secondName, registerRenterDto.patronymic, registerRenterDto.passportNumber));
         renterRepository.save(renter);
 
