@@ -15,8 +15,8 @@ public class RenterCredentials {
     @Column(name = "login")
     private String login;
 
-    @Column(name = "hash")
-    private String hash;
+    @Column(name = "password")
+    private String password;
 
     @OneToOne
     @JoinColumn (name = "renter_id")
@@ -25,9 +25,9 @@ public class RenterCredentials {
     public RenterCredentials() {
     }
 
-    public RenterCredentials(Renter renter, String login, String hash) {
+    public RenterCredentials(Renter renter, String login, String password) {
         this.login = login;
-        this.hash = hash;
+        this.password = password;
         this.renter = renter;
     }
 
@@ -47,12 +47,12 @@ public class RenterCredentials {
         this.login = login;
     }
 
-    public String getHash() {
-        return hash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setHash(String hash) {
-        this.hash = hash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Renter getRenter() {

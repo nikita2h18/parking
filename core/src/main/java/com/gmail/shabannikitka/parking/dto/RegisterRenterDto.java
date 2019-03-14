@@ -3,7 +3,7 @@ package com.gmail.shabannikitka.parking.dto;
 public class RegisterRenterDto {
 
     public String login;
-    public String hash;
+    public String password;
     public String firstName;
     public String secondName;
     public String patronymic;
@@ -12,9 +12,9 @@ public class RegisterRenterDto {
     public RegisterRenterDto() {
     }
 
-    public RegisterRenterDto(String login, String hash, String firstName, String secondName, String patronymic, String passportNumber) {
+    public RegisterRenterDto(String login, String password, String firstName, String secondName, String patronymic, String passportNumber) {
         this.login = login;
-        this.hash = hash;
+        this.password = password;
         this.firstName = firstName;
         this.secondName = secondName;
         this.patronymic = patronymic;

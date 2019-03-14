@@ -14,7 +14,7 @@ create table renter_credentials
     constraint renter_credentials_pk
       primary key,
   login     varchar(50),
-  hash      varchar,
+  password      varchar,
   renter_id bigint
     constraint renter_credentials_renter_id_fk
       references renter
