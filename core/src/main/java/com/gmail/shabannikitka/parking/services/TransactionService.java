@@ -1,12 +1,10 @@
 package com.gmail.shabannikitka.parking.services;
 
 import com.gmail.shabannikitka.parking.dto.NewTransactionDto;
-import com.gmail.shabannikitka.parking.dto.TransactionDto;
 import com.gmail.shabannikitka.parking.entity.Rent;
 import com.gmail.shabannikitka.parking.entity.Renter;
 import com.gmail.shabannikitka.parking.entity.Transaction;
 import com.gmail.shabannikitka.parking.exception.DuplicationException;
-import com.gmail.shabannikitka.parking.repositories.RenterRepository;
 import com.gmail.shabannikitka.parking.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

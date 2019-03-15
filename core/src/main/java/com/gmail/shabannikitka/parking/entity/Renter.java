@@ -1,7 +1,6 @@
 package com.gmail.shabannikitka.parking.entity;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 
 @Entity
 @Table(name= "renter")

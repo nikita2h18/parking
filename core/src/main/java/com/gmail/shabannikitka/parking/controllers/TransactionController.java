@@ -1,7 +1,6 @@
 package com.gmail.shabannikitka.parking.controllers;
 
 import com.gmail.shabannikitka.parking.dto.NewTransactionDto;
-import com.gmail.shabannikitka.parking.dto.TransactionDto;
 import com.gmail.shabannikitka.parking.entity.Rent;
 import com.gmail.shabannikitka.parking.entity.Renter;
 import com.gmail.shabannikitka.parking.exception.DuplicationException;
