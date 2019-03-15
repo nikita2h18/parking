@@ -19,12 +19,16 @@ public class Lot {
     @Column(name = "type")
     private String type;
 
+    @OneToOne(mappedBy = "lot", cascade = CascadeType.ALL)
+    private LotStatus lotStatus;
+
     public Lot() {
     }
 
-    public Lot(Long number, String type) {
+    public Lot(Long number, String type, LotStatus lotStatus) {
         this.number = number;
         this.type = type;
+        this.lotStatus = lotStatus;
     }
 
     public Long getId() {
@@ -49,5 +53,13 @@ public class Lot {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public LotStatus getLotStatus() {
+        return lotStatus;
+    }
+
+    public void setLotStatus(LotStatus lotStatus) {
+        this.lotStatus = lotStatus;
     }
 }
