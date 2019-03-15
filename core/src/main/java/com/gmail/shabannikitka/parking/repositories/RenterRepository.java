@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface RenterRepository extends CrudRepository<Renter, Long> {
 
     @Query("select r from Renter r join r.renterCredentials c where c.login = :login")
-    public void findByLogin(@Param("login") String login);
+    public Renter findByLogin(@Param("login") String login);
 }

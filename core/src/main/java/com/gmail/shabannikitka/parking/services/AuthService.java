@@ -36,4 +36,10 @@ public class AuthService {
 
         return tokenRepository.save(token).getToken();
     }
+
+    public Renter validate(String token) throws NoSuchEntityException {
+        return tokenRepository.findByToken(token)
+                .orElseThrow(() -> new NoSuchEntityException("no such token"))
+                .getRenter();
+    }
 }

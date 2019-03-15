@@ -21,6 +21,11 @@ public class Renter {
     public Renter() {
     }
 
+    public Renter(RenterInfo renterInfo, RenterCredentials renterCredentials) {
+        this.renterInfo = renterInfo;
+        this.renterCredentials = renterCredentials;
+    }
+
     public Long getId() {
         return id;
     }

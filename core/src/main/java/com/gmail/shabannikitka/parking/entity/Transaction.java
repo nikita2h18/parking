@@ -1,5 +1,7 @@
 package com.gmail.shabannikitka.parking.entity;
 
+import com.gmail.shabannikitka.parking.dto.RentDto;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 
@@ -25,13 +27,11 @@ public class Transaction {
     @OneToOne(mappedBy = "transaction")
     private Rent rent;
 
-    public Transaction() {
-    }
-
-    public Transaction(String type, Long price, Renter renter) {
+    public Transaction(String type, Long price, Renter renter, Rent rent) {
         this.type = type;
         this.price = price;
         this.renter = renter;
+        this.rent = rent;
     }
 
     public Long getId() {
