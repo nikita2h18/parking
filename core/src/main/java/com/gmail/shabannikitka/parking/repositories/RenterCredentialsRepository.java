@@ -8,5 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface RenterCredentialsRepository extends CrudRepository<RenterCredentials, Long> {
+    Optional<RenterCredentials> findByLoginAndPassword(String login, String password);
     Optional<RenterCredentials> findByLogin(String login);
+
 }

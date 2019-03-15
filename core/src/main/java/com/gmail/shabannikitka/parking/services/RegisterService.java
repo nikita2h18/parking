@@ -40,6 +40,5 @@ public class RegisterService {
         renter.setRenterCredentials(new RenterCredentials(renter, registerRenterDto.login, Hasher.getHash(registerRenterDto.password)));
         renter.setRenterInfo(new RenterInfo(renter, registerRenterDto.firstName, registerRenterDto.secondName, registerRenterDto.patronymic, registerRenterDto.passportNumber));
         renterRepository.save(renter);
-
     }
 }

@@ -7,6 +7,7 @@ import com.gmail.shabannikitka.parking.exception.AuthenticationException;
 import com.gmail.shabannikitka.parking.exception.NoSuchEntityException;
 import com.gmail.shabannikitka.parking.repositories.RenterCredentialsRepository;
 import com.gmail.shabannikitka.parking.repositories.TokenRepository;
+import com.gmail.shabannikitka.parking.sequrity.Hasher;
 import com.gmail.shabannikitka.parking.sequrity.TokenGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,9 @@ public class AuthService {
         Renter renter = renterCredentialsRepository.findByLogin(authenticationRenterDto.login)
                 .orElseThrow(() -> new NoSuchEntityException("No such renter"))
                 .getRenter();
+
+        if (!Hasher.check(authenticationRenterDto.password, renter.getRenterCredentials().getPassword()))
+            throw new AuthenticationException("invalid renterCredentials");
 
         Token token = new Token(renter, TokenGenerator.generate());
 
