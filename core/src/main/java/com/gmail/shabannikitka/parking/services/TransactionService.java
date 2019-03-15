@@ -18,13 +18,9 @@ import javax.transaction.Transactional;
 public class TransactionService {
 
     @Autowired
-    private final RenterRepository renterRepository;
-
-    @Autowired
     private final TransactionRepository transactionRepository;
 
-    public TransactionService(RenterRepository renterRepository, TransactionRepository transactionRepository) {
-        this.renterRepository = renterRepository;
+    public TransactionService(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
     }
 

@@ -27,6 +27,9 @@ public class Transaction {
     @OneToOne(mappedBy = "transaction")
     private Rent rent;
 
+    public Transaction() {
+    }
+
     public Transaction(String type, Long price, Renter renter, Rent rent) {
         this.type = type;
         this.price = price;
@@ -64,5 +67,13 @@ public class Transaction {
 
     public void setRenter(Renter renter) {
         this.renter = renter;
+    }
+
+    public Rent getRent() {
+        return rent;
+    }
+
+    public void setRent(Rent rent) {
+        this.rent = rent;
     }
 }
