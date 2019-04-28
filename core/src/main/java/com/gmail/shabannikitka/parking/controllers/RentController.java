@@ -1,8 +1,10 @@
 package com.gmail.shabannikitka.parking.controllers;
 
 import com.gmail.shabannikitka.parking.dto.NewRentDto;
+import com.gmail.shabannikitka.parking.dto.NewTransactionDto;
 import com.gmail.shabannikitka.parking.entity.Renter;
 import com.gmail.shabannikitka.parking.entity.Token;
+import com.gmail.shabannikitka.parking.exception.DuplicationException;
 import com.gmail.shabannikitka.parking.exception.NoSuchEntityException;
 import com.gmail.shabannikitka.parking.services.AuthService;
 import com.gmail.shabannikitka.parking.services.RentService;
@@ -24,9 +26,9 @@ public class RentController {
     }
 
     @PostMapping("add")
-    public void rentAdd(@RequestHeader String token, @RequestBody NewRentDto newRentDto) throws NoSuchEntityException {
+    public void rentAdd(@RequestHeader("token") String token, @RequestBody NewRentDto newRentDto) throws NoSuchEntityException, DuplicationException {
         Renter renter = authService.validate(token);
 
-        rentService.rentAdd(newRentDto);
+        rentService.rentAdd(renter, newRentDto);
     }
 }

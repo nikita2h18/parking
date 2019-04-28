@@ -75,7 +75,7 @@ create table lot_status
   lot_id     bigint
     constraint lot_status_lot_id_fk
       references lot,
-  status     varchar,
+  status     boolean,
   time_stamp date
 );
 

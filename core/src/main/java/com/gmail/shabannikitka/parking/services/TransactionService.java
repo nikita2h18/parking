@@ -15,23 +15,21 @@ import javax.transaction.Transactional;
 @Transactional
 public class TransactionService {
 
-    @Autowired
     private final TransactionRepository transactionRepository;
 
+    @Autowired
     public TransactionService(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
     }
 
-    public void transactionCreate(Renter renter, Rent rent, NewTransactionDto newTransactionDto) throws DuplicationException {
-        if (transactionRepository.findAllByRentAndRenter(rent, renter) != null) {
+    public void transactionCreate(Rent rent) throws DuplicationException {
+        if (transactionRepository.findAllByRent(rent).isPresent()) {
             throw new DuplicationException("such transaction already exist");
         }
 
         Transaction transaction = transactionRepository.save(
                 new Transaction(
-                        newTransactionDto.type,
-                        newTransactionDto.price,
-                        renter,
+                        0L,
                         rent
                 )
         );

@@ -14,26 +14,19 @@ public class Transaction {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "type")
-    private String type;
 
     @Column(name = "price")
     private Long price;
 
-    @ManyToOne
-    @JoinColumn(name = "renter_id")
-    private Renter renter;
-
-    @OneToOne(mappedBy = "transaction")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rent_id")
     private Rent rent;
 
     public Transaction() {
     }
 
-    public Transaction(String type, Long price, Renter renter, Rent rent) {
-        this.type = type;
+    public Transaction(Long price, Rent rent) {
         this.price = price;
-        this.renter = renter;
         this.rent = rent;
     }
 
@@ -45,28 +38,12 @@ public class Transaction {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public Long getPrice() {
         return price;
     }
 
     public void setPrice(Long price) {
         this.price = price;
-    }
-
-    public Renter getRenter() {
-        return renter;
-    }
-
-    public void setRenter(Renter renter) {
-        this.renter = renter;
     }
 
     public Rent getRent() {

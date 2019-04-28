@@ -24,5 +24,4 @@ public class RegisterController {
     public void register(@RequestBody RegisterRenterDto registerRenterDto) throws RegistrationException {
         registerService.register(registerRenterDto);
     }
-
 }

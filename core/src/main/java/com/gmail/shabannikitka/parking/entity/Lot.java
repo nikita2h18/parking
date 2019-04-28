@@ -1,6 +1,7 @@
 package com.gmail.shabannikitka.parking.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -22,6 +23,10 @@ public class Lot {
     private LotStatus lotStatus;
 
     public Lot() {
+    }
+
+    public Lot(LotStatus lotStatus) {
+        this.lotStatus = lotStatus;
     }
 
     public Lot(Long number, String type, LotStatus lotStatus) {

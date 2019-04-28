@@ -1,18 +1,18 @@
 package com.gmail.shabannikitka.parking.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class NewLotDto {
 
     public Long number;
     public String type;
     public String status;
-    public Date timeStamp;
+    public LocalDate timeStamp;
 
     public NewLotDto() {
     }
 
-    public NewLotDto(Long number, String type, String status, Date timeStamp) {
+    public NewLotDto(Long number, String type, String status, LocalDate timeStamp) {
         this.number = number;
         this.type = type;
         this.status = status;

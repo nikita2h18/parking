@@ -1,8 +1,7 @@
 package com.gmail.shabannikitka.parking.entity;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 @Entity
 @Table(name= "rent")
@@ -17,29 +16,26 @@ public class Rent {
     @JoinColumn(name = "renter_id")
     private Renter renter;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "lot_id")
-    private List<Lot> lot;
+    private Lot lot;
 
     @Column(name = "rent_start")
-    private Date rentStart;
+    private LocalDate rentStart;
 
     @Column(name = "rent_end")
-    private Date rentEnd;
+    private LocalDate rentEnd;
 
-    @OneToOne
-    @JoinColumn (name = "transaction_id")
-    private Transaction transaction;
+
 
     public Rent() {
     }
 
-    public Rent(Renter renter, List<Lot> lot, Date rentStart, Date rentEnd, Transaction transaction) {
+    public Rent(Renter renter, Lot lot, LocalDate rentStart, LocalDate rentEnd) {
         this.renter = renter;
         this.lot = lot;
         this.rentStart = rentStart;
         this.rentEnd = rentEnd;
-        this.transaction = transaction;
     }
 
     public Long getId() {
@@ -58,35 +54,27 @@ public class Rent {
         this.renter = renter;
     }
 
-    public List<Lot> getLot() {
+    public Lot getLot() {
         return lot;
     }
 
-    public void setLot(List<Lot> lot) {
+    public void setLot(Lot lot) {
         this.lot = lot;
     }
 
-    public Date getRentStart() {
+    public LocalDate getRentStart() {
         return rentStart;
     }
 
-    public void setRentStart(Date rentStart) {
+    public void setRentStart(LocalDate rentStart) {
         this.rentStart = rentStart;
     }
 
-    public Date getRentEnd() {
+    public LocalDate getRentEnd() {
         return rentEnd;
     }
 
-    public void setRentEnd(Date rentEnd) {
+    public void setRentEnd(LocalDate rentEnd) {
         this.rentEnd = rentEnd;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
     }
 }

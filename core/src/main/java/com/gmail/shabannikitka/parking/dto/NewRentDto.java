@@ -1,22 +1,19 @@
 package com.gmail.shabannikitka.parking.dto;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 
 public class NewRentDto {
-    public RenterDto renter;
-    public LotDto lot;
-    public Date rentStart;
-    public Date rentEnd;
-    public TransactionDto transaction;
+    public LotDto lotDto;
+    public LocalDate rentStart;
+    public LocalDate rentEnd;
 
     public NewRentDto() {
     }
 
-    public NewRentDto(RenterDto renter, LotDto lot, Date rentStart, Date rentEnd, TransactionDto transaction) {
-        this.renter = renter;
-        this.lot = lot;
+    public NewRentDto(LotDto lotDto, LocalDate rentStart, LocalDate rentEnd) {
+        this.lotDto = lotDto;
         this.rentStart = rentStart;
         this.rentEnd = rentEnd;
-        this.transaction = transaction;
     }
 }

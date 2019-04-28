@@ -35,6 +35,6 @@ public class TransactionController {
     public void transactionCreate(@RequestHeader("token") String token, @RequestBody NewTransactionDto transactionDto) throws TransactionException, NoSuchEntityException, DuplicationException {
         Renter renter = authService.validate(token);
         Rent rent = new Rent();
-        transactionService.transactionCreate(renter, rent, transactionDto);
+        transactionService.transactionCreate(rent);
     }
 }

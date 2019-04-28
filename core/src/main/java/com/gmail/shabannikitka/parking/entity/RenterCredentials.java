@@ -26,9 +26,9 @@ public class RenterCredentials {
     }
 
     public RenterCredentials(Renter renter, String login, String password) {
+        this.renter = renter;
         this.login = login;
         this.password = password;
-        this.renter = renter;
     }
 
     public Long getId() {

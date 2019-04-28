@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface RentRepository extends CrudRepository<Rent, Long> {
-    Optional<Rent> findByRenter(Rent rent);
+    Optional<Rent> findById(Long id);
 }
