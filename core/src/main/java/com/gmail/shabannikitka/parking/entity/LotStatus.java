@@ -1,7 +1,7 @@
 package com.gmail.shabannikitka.parking.entity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name= "lot_status")
@@ -15,8 +15,8 @@ public class LotStatus {
     @Column(name = "free")
     private Boolean isFree;
 
-    @Column(name = "time_stamp")
-    private LocalDate timeStamp;
+    @Column(name = "timestamp")
+    private LocalDateTime timestamp;
 
     @ManyToOne
     @JoinColumn (name = "lot_id")
@@ -25,9 +25,9 @@ public class LotStatus {
     public LotStatus() {
     }
 
-    public LotStatus(Boolean isFree, LocalDate timeStamp, Lot lot) {
+    public LotStatus(Boolean isFree, LocalDateTime timestamp, Lot lot) {
         this.isFree = isFree;
-        this.timeStamp = timeStamp;
+        this.timestamp = timestamp;
         this.lot = lot;
     }
 
@@ -47,12 +47,12 @@ public class LotStatus {
         isFree = free;
     }
 
-    public LocalDate getTimeStamp() {
-        return timeStamp;
+    public LocalDateTime getTimestamp() {
+        return timestamp;
     }
 
-    public void setTimeStamp(LocalDate timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Lot getLot() {

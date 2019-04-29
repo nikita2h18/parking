@@ -7,13 +7,12 @@ import com.gmail.shabannikitka.parking.repositories.LotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Optional;
 
 @Service
-@Transactional
+
 public class LotService {
 
     @Autowired
@@ -24,7 +23,9 @@ public class LotService {
     }
 
     public LotStatus getCurrentLotStatus(Lot lot) {
-        return lot.getLotStatus();
+        return lot.getLotStatusList()
+                .stream()
+                .min((l1, l2) -> l2.getTimestamp().compareTo(l1.getTimestamp())).get();
     }
 
     public Optional<Lot> findFreeLotByNumber(Long number) {
@@ -49,9 +50,9 @@ public class LotService {
 
         lot.setType(newLotDto.type);
         lot.setNumber(newLotDto.number);
-        lot.setLotStatus((new LotStatus(
+        lot.setLotStatusList(Collections.singletonList(new LotStatus(
                         true,
-                        newLotDto.timeStamp,
+                        LocalDateTime.now(),
                         lot
                 ))
         );

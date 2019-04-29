@@ -1,7 +1,6 @@
 package com.gmail.shabannikitka.parking.services;
 
 import com.gmail.shabannikitka.parking.dto.NewRentDto;
-import com.gmail.shabannikitka.parking.entity.Lot;
 import com.gmail.shabannikitka.parking.entity.LotStatus;
 import com.gmail.shabannikitka.parking.entity.Rent;
 import com.gmail.shabannikitka.parking.entity.Renter;
@@ -11,12 +10,10 @@ import com.gmail.shabannikitka.parking.repositories.RentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.time.LocalDate;
-import java.util.stream.Collectors;
+import java.time.LocalDateTime;
+import java.util.Collections;
 
 @Service
-@Transactional
 public class RentService {
 
     private final RentRepository rentRepository;
@@ -51,13 +48,13 @@ public class RentService {
 
         LotStatus lotStatus = new LotStatus(
                 false,
-                newRentDto.lotDto.lotStatus.timeStamp,
+                LocalDateTime.now(),
                 lotRepository.findByNumber(newRentDto.lotDto.number).get()
         );
 
         lotService.findFreeLotByNumber(newRentDto.lotDto.number).
-                get().
-                setLotStatus(lotStatus);
+                get()
+                .setLotStatusList(Collections.singletonList(lotStatus));
 
 
         rentRepository.save(rent);
