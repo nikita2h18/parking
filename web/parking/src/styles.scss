@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+*:focus {
+  outline: 0;
+}
+
+:root {
+  --bright: #F5F5F5;
+  --maingrey: #ececec;
+  --darkblue: #385170;
+  --dark: #494949;
+  --gray: #737373;
+  --lightgray: #c1c1c1;
+
+  --public-lock: #89d73a;
+  --private-lock: #ced73e;
+
+  --required: #d75a63;
+
+  --feature: #89d73a;
+  --issue: #ced73e;
+  --bug: #d75a63;
+  --request: #5390e4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bright);
+}
+
+input {
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+button {
+  display: grid;
+  background: var(--darkblue);
+
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  transition: background-color ease-in-out 50ms;
+}
+
+.cancel {
+  cursor: pointer;
+}
+
+.cancel:hover {
+  text-decoration: underline;
+}
+
+button:hover {
+  background: var(--maingrey);
+  color: black;
+}
+
+.heading {
+  font-size: 26px;
+}
+
+.required {
+  color: var(--required);
+}
+
+.task-type-icon {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+  width: 20px;
+
+  .feature {
+    color: var(--feature);
+  }
+
+  .issue {
+    color: var(--issue);
+  }
+
+  .bug {
+    color: var(--bug);
+  }
+
+  .request {
+    color: var(--request)
+  }
+}
+
+.delimiter {
+  height: 2px;
+  width: 100%;
+  background: var(--bright);
+}
+
+.pre {
+  color: var(--gray);
+  padding-right: 6px;
+}
+
+//ANIMATIONS
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private registerService: RegisterService
   ) {
-  }
+  } 
 
   ngOnInit() {
   }

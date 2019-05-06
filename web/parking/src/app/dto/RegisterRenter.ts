@@ -1,5 +1,8 @@
 export class RegisterRenter {
   login: string;
   password: string;
-  // TODO: fill other fields
+  firstName: string;
+  secondName: string;
+  patronymic: string;
+  passportNumber: string;
 }
