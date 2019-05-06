@@ -1,0 +1,65 @@
+.overlay {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ececec;
+}
+
+.auth-container {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  background-color: #142d4c;
+
+  margin: 10px;
+  padding: 10px;
+
+  width: 100%;
+  max-width: 300px;
+
+  border-radius: 4px;
+
+  .text {
+    color: white;
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-bottom: 5px;
+      background-color: #9fd3c7;
+    }
+  }
+
+  button {
+    align-self: center;
+    margin: 5px;
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .register-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+      margin: 0 5px;
+
+      color: white;
+      font-size: 20px;
+    }
+
+    a {
+      color: white;
+      font-size: 20px;
+      text-decoration-line: underline;
+    }
+  }
+
+}
