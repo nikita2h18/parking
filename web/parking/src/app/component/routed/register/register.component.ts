@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RegisterRenter} from '../../../dto/RegisterRenter';
 import {RegisterService} from '../../../service/register.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -12,9 +13,10 @@ export class RegisterComponent implements OnInit {
   registerRenter: RegisterRenter = new RegisterRenter();
 
   constructor(
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private router: Router
   ) {
-  } 
+  }
 
   ngOnInit() {
   }
@@ -22,9 +24,9 @@ export class RegisterComponent implements OnInit {
   register() {
     console.log(this.registerRenter);
     this.registerService.register(this.registerRenter).subscribe(success => {
-      console.log('success!');
+      this.router.navigate(['/auth'], {replaceUrl: true});
     }, error => {
-      console.log('error!');
+      this.router.navigate(['/register'], {replaceUrl: true});
     });
   }
 

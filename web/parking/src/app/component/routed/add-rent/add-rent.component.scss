@@ -1,0 +1,33 @@
+.content {
+  display: grid;
+  margin-left: 400px;
+  justify-content: center;
+  padding-top: 30vh;
+
+  .head {
+    color: #637bcf;
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    margin: 5px;
+  }
+}
+
+input {
+  margin-top: 5px;
+  width: 300px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #637bcf;
+}
+
+form {
+  display: grid;
+  max-width: 500px;
+}

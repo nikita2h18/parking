@@ -1,0 +1,19 @@
+.content {
+  display: grid;
+  padding-left: 350px;
+}
+
+.head-container {
+  display: flex;
+}
+
+.main-header{
+  position: fixed;
+  background-color: #c9cfc7;
+}
+
+th {
+  border: 2px solid #4e544d;
+  height: 50px;
+  width: 300px;
+}
