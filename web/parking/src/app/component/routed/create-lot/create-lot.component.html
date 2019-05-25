@@ -1,0 +1,10 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="content">
+  <div class="head">Add lot</div>
+  <form (ngSubmit)="createLot()">
+    <input type="text" placeholder="Lot number" [(ngModel)]="newLot.number" name="lotNumber">
+    <input type="text" placeholder="Lot type" [(ngModel)]="newLot.type" name="lotType">
+    <button>Submit</button>
+  </form>
+</div>

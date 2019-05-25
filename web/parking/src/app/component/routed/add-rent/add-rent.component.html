@@ -2,11 +2,10 @@
 <app-menu></app-menu>
 <div class="content">
   <div class="head">Add rent</div>
-  <form>
-    <input placeholder="Renter last name">
-    <input placeholder="Lot number">
-    <input placeholder="Rent start">
-    <input placeholder="Rent end">
-    <button>Submit</button>
+  <form (ngSubmit)="rentAdd()">
+    <input type="text" placeholder="Lot number" [(ngModel)]="newRent.number" name="number">
+    <input type="Date" placeholder="Rent start" [(ngModel)]="newRent.rentStart" name="rentStart">
+    <input type="Date" placeholder="Rent end" [(ngModel)]="newRent.rentEnd" name="rentEnd">
+    <button type="submit">Submit</button>
   </form>
 </div>

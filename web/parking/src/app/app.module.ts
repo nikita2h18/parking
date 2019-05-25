@@ -11,7 +11,7 @@ import {HeaderComponent} from "./component/embedded/header/header.component";
 import { RentsComponent } from './component/routed/rents/rents.component';
 import { MenuComponent } from './component/routed/menu/menu.component';
 import { LotsComponent } from './component/routed/lots/lots.component';
-import { AddLotComponent } from './component/routed/add-lot/add-lot.component';
+import {CreateLotComponent} from './component/routed/create-lot/create-lot.component';
 import { AddRentComponent } from './component/routed/add-rent/add-rent.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { AddRentComponent } from './component/routed/add-rent/add-rent.component
     RentsComponent,
     MenuComponent,
     LotsComponent,
-    AddLotComponent,
+    CreateLotComponent,
     AddRentComponent
   ],
   imports: [

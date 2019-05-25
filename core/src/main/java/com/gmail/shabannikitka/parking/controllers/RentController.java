@@ -14,12 +14,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("rent")
 public class RentController {
-    @Autowired
-    private final RentService rentService;
 
-    @Autowired
+    private final RentService rentService;
     private final AuthService authService;
 
+    @Autowired
     public RentController(RentService rentService, AuthService authService) {
         this.rentService = rentService;
         this.authService = authService;

@@ -35,13 +35,13 @@ public class RentService {
 
     public void rentAdd(Renter renter, NewRentDto newRentDto) throws DuplicationException {
 
-        if (!lotService.findFreeLotByNumber(newRentDto.lotDto.number).isPresent()) {
+        if (!lotService.findFreeLotByNumber(newRentDto.number).isPresent()) {
             throw new DuplicationException("such lot is already not empty");
         }
 
         Rent rent = new Rent(
                 renter,
-                lotRepository.findByNumber(newRentDto.lotDto.number).get(),
+                lotRepository.findByNumber(newRentDto.number).get(),
                 newRentDto.rentStart,
                 newRentDto.rentEnd
         );
@@ -49,10 +49,10 @@ public class RentService {
         LotStatus lotStatus = new LotStatus(
                 false,
                 LocalDateTime.now(),
-                lotRepository.findByNumber(newRentDto.lotDto.number).get()
+                lotRepository.findByNumber(newRentDto.number).get()
         );
 
-        lotService.findFreeLotByNumber(newRentDto.lotDto.number).
+        lotService.findFreeLotByNumber(newRentDto.number).
                 get()
                 .setLotStatusList(Collections.singletonList(lotStatus));
 
