@@ -6,16 +6,16 @@ public class NewLotDto {
 
     public Long number;
     public String type;
-    public Boolean free;
+    public String status;
     public LocalDateTime timestamp;
 
     public NewLotDto() {
     }
 
-    public NewLotDto(Long number, String type, Boolean free, LocalDateTime timestamp) {
+    public NewLotDto(Long number, String type, String status, LocalDateTime timestamp) {
         this.number = number;
         this.type = type;
-        this.free = free;
+        this.status = status;
         this.timestamp = timestamp;
     }
 }
