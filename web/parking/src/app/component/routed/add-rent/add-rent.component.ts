@@ -3,6 +3,7 @@ import {NewRent} from "../../../dto/NewRent";
 import {Observable} from "rxjs";
 import {RentService} from "../../../service/rent.service";
 import {TokenProviderService} from "../../../service/token.provider.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-rent',
@@ -15,6 +16,7 @@ export class AddRentComponent implements OnInit {
 
   constructor(
     private rentService: RentService,
+    private router: Router,
     private tokenProviderService: TokenProviderService
   ) {
   }
@@ -28,6 +30,7 @@ export class AddRentComponent implements OnInit {
       this.rentService.rentAdd(token, this.newRent).subscribe(
         () => {
           console.log('success');
+          this.router.navigate(['/rents'], {replaceUrl: true});
         }
       )
     });
