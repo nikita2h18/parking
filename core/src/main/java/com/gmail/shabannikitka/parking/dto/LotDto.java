@@ -4,14 +4,12 @@ public class LotDto {
 
     public Long number;
     public String type;
-    public LotStatusDto lotStatus;
 
     public LotDto() {
     }
 
-    public LotDto(Long number, String type, LotStatusDto lotStatus) {
+    public LotDto(Long number, String type) {
         this.number = number;
         this.type = type;
-        this.lotStatus = lotStatus;
     }
 }

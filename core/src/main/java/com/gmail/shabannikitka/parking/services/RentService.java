@@ -1,6 +1,10 @@
 package com.gmail.shabannikitka.parking.services;
 
+import ch.qos.logback.core.pattern.Converter;
+import com.gmail.shabannikitka.parking.dto.LotDto;
+import com.gmail.shabannikitka.parking.dto.LotStatusDto;
 import com.gmail.shabannikitka.parking.dto.NewRentDto;
+import com.gmail.shabannikitka.parking.dto.RentDto;
 import com.gmail.shabannikitka.parking.entity.LotStatus;
 import com.gmail.shabannikitka.parking.entity.Rent;
 import com.gmail.shabannikitka.parking.entity.Renter;
@@ -12,6 +16,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RentService {
@@ -62,4 +68,18 @@ public class RentService {
     }
 
 
+    public List<RentDto> all(Renter renter) {
+
+        return rentRepository.findAllByRenter(renter)
+                .stream()
+                .map(r -> new RentDto(
+                        new LotDto(
+                                r.getLot().getNumber(),
+                                r.getLot().getType()
+                        ),
+                        r.getRentStart(),
+                        r.getRentEnd()
+                ))
+                .collect(Collectors.toList());
+    }
 }
