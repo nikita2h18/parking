@@ -1,6 +1,7 @@
 package com.gmail.shabannikitka.parking.repositories;
 
 import com.gmail.shabannikitka.parking.entity.Renter;
+import com.gmail.shabannikitka.parking.entity.RenterInfo;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -11,4 +12,5 @@ public interface RenterRepository extends CrudRepository<Renter, Long> {
 
     @Query("select r from Renter r join r.renterCredentials c where c.login = :login")
     Renter findByLogin(@Param("login") String login);
+
 }

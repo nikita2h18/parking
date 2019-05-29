@@ -23,6 +23,7 @@
 
       .rents:hover {
         background-color: #686e67;
+        cursor: pointer;
       }
 
       .lots {
@@ -33,6 +34,7 @@
 
       .lots:hover {
         background-color: #686e67;
+        cursor: pointer;
       }
 
       .add-rent {
@@ -43,6 +45,7 @@
 
       .add-rent:hover {
         background-color: #686e67;
+        cursor: pointer;
       }
 
       .add-lot {
@@ -52,6 +55,7 @@
       }
 
       .add-lot:hover {
+        cursor: pointer;
         background-color: #686e67;
       }
     }
@@ -65,6 +69,7 @@
       width: 300px;
     }
     .log-out:hover {
+      cursor: pointer;
       background-color: #686e67;
     }
   }

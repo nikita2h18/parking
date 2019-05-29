@@ -13,6 +13,8 @@ import { MenuComponent } from './component/routed/menu/menu.component';
 import { LotsComponent } from './component/routed/lots/lots.component';
 import {CreateLotComponent} from './component/routed/create-lot/create-lot.component';
 import { AddRentComponent } from './component/routed/add-rent/add-rent.component';
+import { RentComponent } from './component/routed/rent/rent.component';
+import { LotComponent } from './component/routed/lot/lot.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AddRentComponent } from './component/routed/add-rent/add-rent.component
     MenuComponent,
     LotsComponent,
     CreateLotComponent,
-    AddRentComponent
+    AddRentComponent,
+    RentComponent,
+    LotComponent
   ],
   imports: [
     BrowserModule,

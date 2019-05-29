@@ -1,0 +1,14 @@
+<table *ngIf="lots">
+  <tr *ngFor="let lot of lots">
+    <th>
+      {{lot.number}}
+    </th>
+    <th>
+      {{lot.isFree}}
+    </th>
+    <th>
+      {{lot.type}}
+    </th>
+  </tr>
+</table>
+<button (click)="getAll()">Show All</button>

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Optional} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {NewRent} from "../dto/NewRent";
 import {API_URL} from "../../globals";
+import {Rent} from "../dto/Rent";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,13 @@ export class RentService {
         token: token
       }
     });
+  }
+
+  getAll(token: string): Observable<Rent []> {
+    return this.http.get<Rent[]> (API_URL + 'rent/rents', {
+      headers: {
+        token: token
+      }
+    })
   }
 }

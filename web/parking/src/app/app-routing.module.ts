@@ -7,6 +7,8 @@ import {RentsComponent} from "./component/routed/rents/rents.component";
 import {LotsComponent} from "./component/routed/lots/lots.component";
 import {CreateLotComponent} from "./component/routed/create-lot/create-lot.component";
 import {AddRentComponent} from "./component/routed/add-rent/add-rent.component";
+import {RentComponent} from "./component/routed/rent/rent.component";
+import {LotComponent} from "./component/routed/lot/lot.component";
 
 const routes: Routes = [
   {
@@ -26,18 +28,25 @@ const routes: Routes = [
     component: AppComponent
   },
   {
-    path:'lots',
+    path: 'lots',
     component: LotsComponent
   },
   {
-    path:'lot/create',
+    path: 'lot/create',
     component: CreateLotComponent
   },
   {
-    path:'add/rent',
+    path: 'add/rent',
     component: AddRentComponent
+  },
+  {
+    path: 'rents/rent',
+    component: RentComponent
+  },
+  {
+    path: 'lots/lot',
+    component: LotComponent
   }
-
 ];
 
 @NgModule({

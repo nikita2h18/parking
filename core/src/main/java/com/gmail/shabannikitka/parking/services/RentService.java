@@ -70,16 +70,16 @@ public class RentService {
 
     public List<RentDto> all(Renter renter) {
 
-        return rentRepository.findAllByRenter(renter)
-                .stream()
-                .map(r -> new RentDto(
-                        new LotDto(
-                                r.getLot().getNumber(),
-                                r.getLot().getType()
-                        ),
-                        r.getRentStart(),
-                        r.getRentEnd()
-                ))
-                .collect(Collectors.toList());
+            return rentRepository.findAllByRenter(renter)
+                    .stream()
+                    .map(r -> new RentDto(
+                            renter.getRenterInfo().getfirstName(),
+                            renter.getRenterInfo().getlastName(),
+                            renter.getRenterInfo().getPatronimyc(),
+                            r.getLot().getNumber(),
+                            r.getRentStart(),
+                            r.getRentEnd()
+                    ))
+                    .collect(Collectors.toList());
     }
 }

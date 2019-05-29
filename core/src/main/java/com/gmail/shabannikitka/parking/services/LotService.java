@@ -1,15 +1,21 @@
 package com.gmail.shabannikitka.parking.services;
 
+import com.gmail.shabannikitka.parking.dto.LotDto;
 import com.gmail.shabannikitka.parking.dto.NewLotDto;
 import com.gmail.shabannikitka.parking.entity.Lot;
 import com.gmail.shabannikitka.parking.entity.LotStatus;
+import com.gmail.shabannikitka.parking.entity.Renter;
 import com.gmail.shabannikitka.parking.repositories.LotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Supplier;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 
@@ -60,4 +66,15 @@ public class LotService {
         lotRepository.save(lot);
     }
 
+    public List<LotDto> all() {
+        return lotRepository.findAll()
+                .stream()
+                .map(l -> new LotDto(
+                        l.getNumber(),
+                        l.getType(),
+                        getCurrentLotStatus(lotRepository.findByNumber(l.getNumber())
+                                .orElseThrow(() -> new RuntimeException("no such lot"))).getFree()
+                ))
+                .collect(Collectors.toList());
+    }
 }

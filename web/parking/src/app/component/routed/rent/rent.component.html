@@ -1,0 +1,23 @@
+<table *ngIf="rents">
+  <tr *ngFor="let rent of rents">
+    <th>
+      {{rent.name}}
+    </th>
+    <th>
+      {{rent.lastName}}
+    </th>
+    <th>
+      {{rent.patronymic}}
+    </th>
+    <th>
+      {{rent.number}}
+    </th>
+    <th>
+      {{rent.rentStart}}
+    </th>
+    <th>
+      {{rent.rentEnd}}
+    </th>
+  </tr>
+</table>
+<button (click)="getAll()">Show All</button>
