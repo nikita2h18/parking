@@ -1,12 +1,20 @@
 package com.gmail.shabannikitka.parking.dto;
 
+import javax.validation.constraints.NotEmpty;
+
 public class RegisterRenterDto {
 
+    @NotEmpty(message = "Shouldn't be empty")
     public String login;
+    @NotEmpty(message = "Shouldn't be empty")
     public String password;
+    @NotEmpty(message = "Shouldn't be empty")
     public String firstName;
+    @NotEmpty(message = "Shouldn't be empty")
     public String secondName;
+    @NotEmpty(message = "Shouldn't be empty")
     public String patronymic;
+    @NotEmpty(message = "Shouldn't be empty")
     public String passportNumber;
 
     public RegisterRenterDto() {
